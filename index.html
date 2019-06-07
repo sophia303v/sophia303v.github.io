@@ -229,6 +229,153 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/06/07/Supervision/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="John Doe">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/06/07/Supervision/" itemprop="url">Supervision</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-06-07T17:37:11+08:00">
+                2019-06-07
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="Paper-Read-Learning-From-Noisy-Large-Scale-Datasets-With-Minimal-Supervision"><a href="#Paper-Read-Learning-From-Noisy-Large-Scale-Datasets-With-Minimal-Supervision" class="headerlink" title="[Paper Read]Learning From Noisy Large-Scale Datasets With Minimal Supervision"></a>[Paper Read]Learning From Noisy Large-Scale Datasets With Minimal Supervision</h1><h6 id="tags-course-AMMAI-CVPR-17"><a href="#tags-course-AMMAI-CVPR-17" class="headerlink" title="tags: course AMMAI CVPR_17"></a>tags: <code>course</code> <code>AMMAI</code> <code>CVPR_17</code></h6><h6 id="R07944034-許芝柔"><a href="#R07944034-許芝柔" class="headerlink" title="R07944034 許芝柔"></a>R07944034 許芝柔</h6><h2 id="Problem-Definition"><a href="#Problem-Definition" class="headerlink" title="Problem Definition"></a>Problem Definition</h2><p>To leverage a small set of clean labels in the presence of a massive dataset with noisy labels.</p>
+<ul>
+<li>Problem: Large noisy annotation data</li>
+<li>DataSet: <strong>Open Images</strong> (~9 million images), multiple-labeled image and over 6000 unique classes.</li>
+<li>Application: Object Classification</li>
+<li>Assumption(Limitation): data with large number of classes and wide range of noise in annotations</li>
+</ul>
+<h2 id="Contribution"><a href="#Contribution" class="headerlink" title="Contribution"></a>Contribution</h2><ul>
+<li><p>Introduce a semi-supervised learning framework which can produce a cleaned version of the dataset and a robust multi-label image classifier that facilitates small sets of clean annotations with large noisy data.</p>
+</li>
+<li><p>Outperforming direct fine-tuning approaches across all major categories in the Open Image dataset.</p>
+</li>
+<li><p>Improving performance across the full range of label noise levels(even in limited rated data), and most effective for classes having 20% to 80% false positive annotations.</p>
+</li>
+</ul>
+<h2 id="Method"><a href="#Method" class="headerlink" title="Method"></a>Method</h2><h3 id="high-level"><a href="#high-level" class="headerlink" title="high-level"></a>high-level</h3><p><img src="https://i.imgur.com/AyqHatu.png" alt></p>
+<h3 id="netwrok"><a href="#netwrok" class="headerlink" title="netwrok"></a>netwrok</h3><p><img src="https://i.imgur.com/X95YCaS.png" alt><br>Use the small clean dataset to learn a mapping between between noise and clean annotation.</p>
+<ul>
+<li><p>Two supervised-learning network in this model. </p>
+</li>
+<li><p>The first is <strong>“label cleaning network”</strong> , which input the set of noisy label and image feature extract by CNN(Inception V3) , output cleaned label set to supervise the second network. </p>
+</li>
+<li><p>The label cleaning network is a residual model learning the difference between clean and noisy data. The model use identity skip-connection structure ( inspired by ResNet V1).</p>
+</li>
+<li><p>The second is <strong>“multi-label classifier”</strong> taking the label predicted by the first network as ground truth if the image pair doesn’t have a clean label. </p>
+</li>
+</ul>
+<h2 id="Result"><a href="#Result" class="headerlink" title="Result"></a>Result</h2><p><img src="https://i.imgur.com/JMV0CNi.png" alt></p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/06/07/hello-world/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -394,7 +541,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">1</span>
+                  <span class="site-state-item-count">2</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
